@@ -1,0 +1,48 @@
+--Create tables with famous people and information about them
+
+CREATE TABLE singers(
+id INTEGER PRIMARY KEY,
+name TEXT, 
+age INTEGER
+);
+
+INSERT INTO singers VALUES (1, "Daniel Caesar", 28);
+INSERT INTO singers VALUES (2, "SZA", 33);
+INSERT INTO singers VALUES (3, "King Krule", 28);
+
+CREATE TABLE songs (
+artist_id INTEGER,
+title TEXT,
+release INTEGER
+);
+
+INSERT INTO songs VALUES (1, "Get You", 2016);
+INSERT INTO songs VALUES (1, "Violet", 2014);
+INSERT INTO songs VALUES (1, "Shot My Baby", 2023);
+INSERT INTO songs VALUES (1, "Cyanide", 2019);
+INSERT INTO songs VALUES (3, "Locomotive", 2017);
+INSERT INTO songs VALUES (2, "Kill Bill", 2023);
+INSERT INTO songs VALUES (2, "Childs Play", 2014);
+INSERT INTO songs VALUES (3, "Slush Puppy", 2017);
+INSERT INTO songs VALUES (3, "Dum Surfer", 2017);
+
+CREATE TABLE birthplace (
+artist_id INTEGER,
+country TEXT
+);
+
+INSERT INTO birthplace VALUES (1, "Canada");
+INSERT INTO birthplace VALUES (2, "U.S.A.");
+INSERT INTO birthplace VALUES (3, "England");
+
+--Names of singers and the songs they sing shown together
+SELECT singers.name, songs.title
+FROM singers
+    JOIN songs
+    ON singers.id = songs.artist_id ORDER BY name;
+    
+ --The place of birth for each singer
+ SELECT singers.name,birthplace.country
+    FROM singers
+    JOIN birthplace
+    ON singers.id = birthplace.artist_id; 
