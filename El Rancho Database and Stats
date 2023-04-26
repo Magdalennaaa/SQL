@@ -1,0 +1,24 @@
+--Create a grocery store database
+CREATE TABLE items (id INTEGER PRIMARY KEY, name TEXT, stock INTEGER, avg_daily_sales INTEGER, price INTEGER);
+
+INSERT INTO items VALUES (1, "cheek meat", 200, 75, 135);
+INSERT INTO items VALUES (2, "chorizo", 200, 100, 42);
+INSERT INTO items VALUES (3, "chicharrones", 400, 50, 25);
+INSERT INTO items VALUES (4, "cups", 50, 15, 32);
+INSERT INTO items VALUES (5, "corn husks", 5, 1, 125);
+INSERT INTO items VALUES (6, "chili powder", 5, 2, 100);
+INSERT INTO items VALUES (7, "guisada", 30, 10, 58);
+INSERT INTO items VALUES (8, "eggs", 50, 5, 16);
+INSERT INTO items VALUES (9, "cheese", 25, 5, 15);
+INSERT INTO items VALUES (10, "napkins", 20, 1, 45);
+INSERT INTO items VALUES (11, "bunuelos", 120, 120, 65);
+INSERT INTO items VALUES (12, "nondairy creamers", 200, 50, 8);
+INSERT INTO items VALUES (13, "flour", 100, 5, 12);
+INSERT INTO items VALUES (14, "salt", 50, 1, 9);
+INSERT INTO items VALUES (15, "tortillas", 20, 5, 20);
+
+--Display the database oredered by price
+SELECT * FROM items ORDER BY price;
+
+--What items do we sell more 
+SELECT * FROM items WHERE avg_daily_sales > 20 ORDER BY price;
