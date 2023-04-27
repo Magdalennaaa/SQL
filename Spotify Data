@@ -29,8 +29,8 @@ time_signature integer NOT NULL
 SELECT COUNT(track_name)
 FROM BIT_DB.Spotifydata
 
---Here I learned which 5 artists were the most popular
-SELECT artist_name, popularity
+--Here I learned which 5 songs were the most popular
+SELECT artist_name, popularity, track_name
 FROM BIT_DB.Spotifydata
 ORDER BY Popularity DESC
 LIMIT 5
